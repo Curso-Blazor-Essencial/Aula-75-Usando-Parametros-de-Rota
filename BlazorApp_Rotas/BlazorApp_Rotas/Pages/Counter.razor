@@ -1,7 +1,4 @@
 ﻿@page "/counter"
-@page "/counter/{incremento:int}"
-@page "/counter/{texto}"
-@page "/counter/{incremento:int}/{texto}"
 
 <PageTitle>Counter</PageTitle>
 
@@ -11,20 +8,12 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-<h1> @Texto </h1>
 
 @code {
-    [Parameter]
-    public int Incremento { get; set; }
-
-    [Parameter]
-    public string Texto { get; set; } = "Blazor";
-
     private int currentCount = 0;
 
     private void IncrementCount()
     {
-        Texto = Texto ?? "O Blazor é incrível";
-        currentCount += Incremento;
+        currentCount++;
     }
 }
